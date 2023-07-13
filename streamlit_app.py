@@ -37,7 +37,7 @@ with st.echo(code_location='below'):
         .mark_circle(color='#0068c9', opacity=0.5)
         .encode(x='x:Q', y='y:Q'))
 
-def convert_ticks_to_points(tick_size, multiplier, number_of_ticks):
+with st.echo(def convert_ticks_to_points(tick_size, multiplier, number_of_ticks):
     """
     Function to convert future contract ticks into points.
     
@@ -53,4 +53,5 @@ def convert_ticks_to_points(tick_size, multiplier, number_of_ticks):
     conversion_factor = tick_value / tick_size
     number_of_points = number_of_ticks * conversion_factor
     
-    return int(number_of_points)
+    return int(number_of_points)):
+st.write(convert_tick_to_points())
