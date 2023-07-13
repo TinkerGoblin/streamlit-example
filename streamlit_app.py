@@ -36,3 +36,21 @@ with st.echo(code_location='below'):
     st.altair_chart(alt.Chart(pd.DataFrame(data), height=500, width=500)
         .mark_circle(color='#0068c9', opacity=0.5)
         .encode(x='x:Q', y='y:Q'))
+
+def convert_ticks_to_points(tick_size, multiplier, number_of_ticks):
+    """
+    Function to convert future contract ticks into points.
+    
+    Parameters:
+    tick_size (float): The tick size of the contract.
+    multiplier (int): The multiplier of the contract.
+    number_of_ticks (int): The number of ticks to convert.
+    
+    Returns:
+    int: The number of points equivalent to the given number of ticks.
+    """
+    tick_value = tick_size * multiplier
+    conversion_factor = tick_value / tick_size
+    number_of_points = number_of_ticks * conversion_factor
+    
+    return int(number_of_points)
